@@ -4,12 +4,12 @@
 		"selected_items":
 		[
 			[
-				"incl",
-				"include <header>\t  Snippet"
-			],
-			[
 				"clas",
 				"class\tclass-..-(class)"
+			],
+			[
+				"incl",
+				"include <header>\t  Snippet"
 			],
 			[
 				"defin",
@@ -309,11 +309,13 @@
 	},
 	"file_history":
 	[
-		"/Users/mfbolus/Code/eg-cpplint/.gitignore",
-		"/Users/mfbolus/Code/eg-cpplint/include/lds_sys.hpp",
-		"/Users/mfbolus/Code/eg-cpplint/src/lds_sys.cpp",
-		"/Users/mfbolus/Code/eg-cpplint/cpp.sublime-project",
 		"/Users/mfbolus/Code/eg-cpplint/.clang-tidy",
+		"/Users/mfbolus/Code/eg-cpplint/.clang-format",
+		"/Users/mfbolus/Code/eg-cpplint/cpp.sublime-project",
+		"/Users/mfbolus/Code/eg-cpplint/include/lds_sys.hpp",
+		"/Users/mfbolus/Code/eg-cpplint/readme.md",
+		"/Users/mfbolus/Code/eg-cpplint/src/lds_sys.cpp",
+		"/Users/mfbolus/Code/eg-cpplint/.gitignore",
 		"/Users/mfbolus/Code/eg-cpplint/test-cpplint.sublime-project",
 		"/Users/mfbolus/Code/test-cpplint/.clang-tidy",
 		"/Users/mfbolus/Code/test-cpplint/src/sys.cpp",
@@ -418,7 +420,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -491,7 +493,7 @@
 	},
 	"output.language servers":
 	{
-		"height": 194.0
+		"height": 439.0
 	},
 	"output.mdpopups":
 	{

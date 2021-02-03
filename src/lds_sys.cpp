@@ -12,4 +12,8 @@ void Sys::add_to_x(const arma::vec &x) {
 	x_ += x;
 }
 
+void Change_A(arma::mat &A) {
+  A(0) = 1.0;
+}
+
 }  // namespace lds

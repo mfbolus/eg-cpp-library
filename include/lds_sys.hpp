@@ -18,6 +18,8 @@ class Sys {
   arma::vec y_;
 };
 
+void Change_A(arma::mat& A);
+
 }  // namespace lds
 
 #endif

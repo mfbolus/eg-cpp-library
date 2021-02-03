@@ -1,3 +1,5 @@
+# See list of clang-tidy checks here:
+# https://releases.llvm.org/11.0.1/tools/clang/tools/extra/docs/clang-tidy/checks/list.html
 Checks: >
   -*,
   bugprone-*,
@@ -9,12 +11,19 @@ Checks: >
   readability-*,
   llvm-header-guard,
   llvm-include-order,
-  -google-runtime-references,
-# I added this last one to *remove* this check.
-# It was preventing from passing arguments as reference for editing wo return.
+  clang-analyzer-cplusplus.InnerPointer,
+  cppcoreguidelines-*,
+# -google-runtime-references,
+# Add this last one to *remove* this check.
+# It prevents passing arguments as non-const reference for editing w/o return.
+# Idea is using const ref makes it clear it is an INPUT rather than output.
+# They suggest using pointer param or explicitly returning.
 
-# Turn all the warnings from the checks above into errors.
-WarningsAsErrors: "*"
+# Turn almost all the warnings from the checks above into errors.
+WarningsAsErrors: >
+  *,
+  -google-runtime-references,
+  -cppcoreguidelines-*,
 
 CheckOptions:
   - { key: readability-identifier-naming.NamespaceCase,          value: lower_case }
