@@ -1,0 +1,549 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"incl",
+				"include <header>\t  Snippet"
+			],
+			[
+				"clas",
+				"class\tclass-..-(class)"
+			],
+			[
+				"defin",
+				"define macro\t  Snippet"
+			],
+			[
+				"ifn",
+				"ifndef macro\t  Snippet"
+			],
+			[
+				"ifde",
+				"ifndef macro\t  Snippet"
+			],
+			[
+				"defi",
+				"define macro\t  Snippet"
+			],
+			[
+				"ifd",
+				"ifndef macro\t  Snippet"
+			],
+			[
+				"inc",
+				"include <header>\t  Snippet"
+			],
+			[
+				"d",
+				"def\t#ifndef … #define … #endif"
+			],
+			[
+				"Err",
+				"Error\t  Interface"
+			],
+			[
+				"re",
+				"Read\t  Interface"
+			],
+			[
+				"std",
+				"stdin_async\t  Variable"
+			],
+			[
+				"key",
+				"key_reader\t  Variable"
+			],
+			[
+				"ir_fr",
+				"ir_frame2\t  ArrayBase<OwnedRepr<u8>, Dim<[usize; _]>>"
+			],
+			[
+				"arra",
+				"ArrayQueue<…>\t  Struct"
+			],
+			[
+				"list",
+				"t_listen\t  JoinHandle<impl Future<Output = Result<(), Box<dyn Error, Global>>>>"
+			],
+			[
+				"Arra",
+				"ArrayQueue\t  Reference"
+			],
+			[
+				"Array",
+				"Array2\t  Struct"
+			],
+			[
+				"mathc",
+				"matches\t  Matches"
+			],
+			[
+				"file",
+				"filename_output\t  String"
+			],
+			[
+				"Ix",
+				"Ix2(…)\t  pub fn Ix2(i0: Ix, i1: Ix) -> Ix2"
+			],
+			[
+				"Dim",
+				"Dim<…>\t  Struct"
+			],
+			[
+				"from",
+				"from_shape_vec\t  pub fn from_shape_vec<Sh>(shape: Sh, v: Vec<A>) -> Result<Self, ShapeError>\nwhere\n        Sh: Into<StrideShape<D>>,"
+			],
+			[
+				"n",
+				"new(…)\t  pub fn new(indices: T) -> Result<SliceInfo<T, D>, ShapeError>"
+			],
+			[
+				"Slice",
+				"SliceOrIndex\t  Enum"
+			],
+			[
+				"Slic",
+				"SliceOrIndex\t  Enum"
+			],
+			[
+				"ch",
+				"chunk_infer()\t  pub fn chunk_infer(&mut self) -> &mut Self"
+			],
+			[
+				"fram",
+				"frame_kind\t  Module"
+			],
+			[
+				"from_r",
+				"from_raw_parts(…)\t  pub unsafe fn from_raw_parts<'a, T>(data: *const T, len: usize) -> &'a [T]"
+			],
+			[
+				"int",
+				"into_raw\t  fn into_raw(self) -> *mut sys::rs2_frame"
+			],
+			[
+				"as",
+				"as_ptr()\t  pub const fn as_ptr(self) -> *mut T"
+			],
+			[
+				"Video",
+				"VideoFrameEx\t  Interface"
+			],
+			[
+				"u",
+				"u8\t  Struct"
+			],
+			[
+				"di",
+				"dim()\t  pub fn dim(&self) -> D::Pattern"
+			],
+			[
+				"test",
+				"test0\t  Vec<i32>"
+			],
+			[
+				"L",
+				"L8\t  ()"
+			],
+			[
+				"Y",
+				"Y8\t  ()"
+			],
+			[
+				"Has",
+				"HashMap\t  Struct"
+			],
+			[
+				"format",
+				"formatOnSave"
+			],
+			[
+				"rust",
+				"rust-analyzer"
+			],
+			[
+				"en",
+				"env\t  Module"
+			],
+			[
+				"t",
+				"to_owned()\t  fn to_owned(&self) -> Self::Owned"
+			],
+			[
+				"try_ex",
+				"try_extend_to()\t  pub fn try_extend_to<Kind>(self) -> Result<result::Result<Frame<Kind>, Self>>\nwhere\n        Kind: frame_kind::NonAnyFrameKind,"
+			],
+			[
+				"println",
+				"println!(…)\t  #[macro_export]\nmacro_rules! println"
+			],
+			[
+				"inpu",
+				"input_shape\tstatement"
+			],
+			[
+				"session",
+				"SessionRunArgs"
+			],
+			[
+				"ima",
+				"image"
+			],
+			[
+				"tf",
+				"tf_img\tmodule"
+			],
+			[
+				"perspe",
+				"perspective_transform"
+			],
+			[
+				"inp",
+				"inputs\tparam"
+			],
+			[
+				"im",
+				"im_ab\tstatement"
+			],
+			[
+				"dtyp",
+				"dtypes"
+			],
+			[
+				"Ze",
+				"zero()\t  pub fn zero<T: Zero>() -> T"
+			],
+			[
+				"im_a",
+				"im_a2b\tstatement"
+			],
+			[
+				"x",
+				"x_pix\tstatement"
+			]
+		]
+	},
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"LSP",
+				"LSP: Enable Language Server Globally"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"lsp",
+				"LSP: Enable Language Server Globally"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"enabl",
+				"Package Control: Enable Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"",
+				"Anaconda: Goto object definition"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 558.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/mfbolus/Code/eg-cpplint/.gitignore",
+		"/Users/mfbolus/Code/eg-cpplint/include/lds_sys.hpp",
+		"/Users/mfbolus/Code/eg-cpplint/src/lds_sys.cpp",
+		"/Users/mfbolus/Code/eg-cpplint/cpp.sublime-project",
+		"/Users/mfbolus/Code/eg-cpplint/.clang-tidy",
+		"/Users/mfbolus/Code/eg-cpplint/test-cpplint.sublime-project",
+		"/Users/mfbolus/Code/test-cpplint/.clang-tidy",
+		"/Users/mfbolus/Code/test-cpplint/src/sys.cpp",
+		"/Users/mfbolus/Code/test-cpplint/include/sys.hpp",
+		"/Users/mfbolus/Code/test-cpplint/compile_flags.txt",
+		"/Users/mfbolus/Code/test-cpplint/include/sys.h",
+		"/Users/mfbolus/Code/stanley-rozell/ldsCtrlEst/include/ldsCtrlEst_h/lds_sys.hpp",
+		"/Users/mfbolus/Code/stanley-rozell/ldsCtrlEst/include/ldsCtrlEst_h/lds_gaussian.hpp",
+		"/Users/mfbolus/Library/Application Support/Sublime Text 3/Packages/DocBlockr/README.md",
+		"/Users/mfbolus/Code/rs-spatial-transform/src/main.rs",
+		"/Users/mfbolus/Code/rs-arrayfire-test/src/main.rs",
+		"/Users/mfbolus/Code/rs-arrayfire-test/Cargo.toml",
+		"/Users/mfbolus/Code/stanley-rozell/tdtUDP/README.md",
+		"/Users/mfbolus/Code/rs-realsense-test/src/util.rs",
+		"/Users/mfbolus/Code/Aliorum/realsense-rust/examples/capture_images_async.rs",
+		"/Users/mfbolus/Code/rs-realsense-test/src/main.rs",
+		"/Users/mfbolus/Code/rs-realsense-test/.gitignore",
+		"/Users/mfbolus/Code/rs-realsense-test/readme.md",
+		"/Users/mfbolus/Code/rs-kvstore-tutorial/src/main.rs",
+		"/Users/mfbolus/Code/Aliorum/hdf5/src/H5S.c",
+		"/Users/mfbolus/Code/Aliorum/hdf5/src/H5D.c",
+		"/Users/mfbolus/Code/Aliorum/rtxi/compile_flags.txt",
+		"/Users/mfbolus/Desktop/h5_extend.c",
+		"/Users/mfbolus/Code/Aliorum/hdf5-rust/examples/simple.rs",
+		"/Users/mfbolus/.cargo/registry/src/github.com-1ecc6299db9ec823/ndarray-0.14.0/src/impl_constructors.rs",
+		"/Users/mfbolus/Dropbox/20201126-image-homography/homography-test.jl",
+		"/Users/mfbolus/Code/rs-realsense-test/Cargo.toml",
+		"/Users/mfbolus/Code/rs-spatial-transform/Cargo.toml",
+		"/Users/mfbolus/Code/Aliorum/realsense-rust/src/frame.rs",
+		"/Users/mfbolus/mfbMacMini/home/braniac/Code/pytensorflow-spatial-transform/README.md",
+		"/Users/mfbolus/mfbMacMini/home/braniac/Code/pytensorflow-spatial-transform/train_model.py",
+		"/Users/mfbolus/mfbMacMini/home/braniac/Code/pytensorflow-spatial-transform/.gitignore",
+		"/Users/mfbolus/mfbMacMini/home/braniac/Code/pytensorflow-spatial-transform/generate_data.py",
+		"/Users/mfbolus/Code/rs-spatial-transform/.gitignore",
+		"/Users/mfbolus/Code/rs-spatial-transform/README.md",
+		"/Users/mfbolus/Code/ann-regression-test/src/main.rs",
+		"/Users/mfbolus/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/library/core/src/convert/mod.rs",
+		"/Users/mfbolus/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/library/core/src/result.rs",
+		"/Users/mfbolus/Code/Aliorum/tensorflow-rust/src/lib.rs",
+		"/Users/mfbolus/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayfire-3.8.0/src/image/mod.rs",
+		"/Users/mfbolus/Code/learn-rust/src/main.rs",
+		"/Users/mfbolus/Code/rust-tensorflow-mnist-neural-network-example/src/main.rs",
+		"/Users/mfbolus/Code/rs-tensorflow-test/src/main.rs",
+		"/Users/mfbolus/.cargo/registry/src/github.com-1ecc6299db9ec823/image-0.23.12/src/flat.rs",
+		"/Users/mfbolus/Code/Aliorum/realsense-rust/src/base.rs",
+		"/Users/mfbolus/.cargo/git/checkouts/realsense-rust-35536850945e636f/d2c1077/src/frame.rs",
+		"/Users/mfbolus/macports/devel/rust-analyzer/Portfile",
+		"/Users/mfbolus/macports/.git/COMMIT_EDITMSG",
+		"/Users/mfbolus/Code/Aliorum/realsense-rust/realsense-sys/build.rs",
+		"/Users/mfbolus/Code/Aliorum/realsense-rust/realsense-sys/c/rsutil_delegate.h",
+		"/Users/mfbolus/.zprofile",
+		"/Users/mfbolus/macports/devel/libtensorflow/Portfile",
+		"/Users/mfbolus/macports/graphics/librealsense/Portfile",
+		"/Users/mfbolus/macports/graphics/vulkan/Portfile",
+		"/Users/mfbolus/macports/graphics/vulkansdk/Portfile",
+		"/Users/mfbolus/Desktop/test/Makefile",
+		"/Users/mfbolus/Desktop/test/histogram.cpp",
+		"/Users/mfbolus/.profile",
+		"/Users/mfbolus/macports/graphics/freeimage/Portfile",
+		"/Users/mfbolus/macports/graphics/freeimage/files/fix-c99-err.diff",
+		"/Users/mfbolus/macports/README.md",
+		"/Users/mfbolus/macports/.gitignore",
+		"/Users/mfbolus/macports/devel/clangd/Portfile",
+		"/Users/mfbolus/Desktop/test/main.cpp",
+		"/opt/local/var/macports/build/_Users_mfbolus_macports_devel_arrayfire/arrayfire/work/build/CMakeFiles/CMakeError.log",
+		"/opt/local/var/macports/build/_Users_mfbolus_macports_devel_arrayfire/arrayfire/work/build/CMakeFiles/CMakeOutput.log",
+		"/Users/mfbolus/macports/devel/arrayfire/Portfile",
+		"/opt/local/var/macports/logs/_Users_mfbolus_macports_devel_arrayfire/arrayfire/main.log",
+		"/opt/local/var/macports/logs/_opt_local_var_macports_sources_rsync.macports.org_macports_release_tarballs_ports_graphics_freeimage/freeimage/main.log",
+		"/opt/local/etc/macports/macports.conf",
+		"/Users/mfbolus/.cargo/registry/src/github.com-1ecc6299db9ec823/arrayfire-3.7.2/src/core/array.rs",
+		"/Users/mfbolus/macports/python/pipenv-devel/Portfile",
+		"/Users/mfbolus/macports/devel/libtensorflow/files/tensoreflow.pc.tcl",
+		"/opt/local/var/macports/logs/_Users_mfbolus_macports_devel_libtensorflow/libtensorflow/main.log",
+		"/Users/mfbolus/macports/devel/libtensorflow/config.sh",
+		"/Users/mfbolus/Code/rs-tensorflow-test/Cargo.toml",
+		"/Users/mfbolus/Code/pytensorflow-spatial-transform/.sync/IgnoreList",
+		"/Users/mfbolus/Code/Aliorum/voxelmorph/voxelmorph/tf/networks.py",
+		"/Users/mfbolus/Code/Aliorum/voxelmorph/voxelmorph/tf/modelio.py",
+		"/Users/mfbolus/Code/Aliorum/voxelmorph/voxelmorph/tf/layers.py",
+		"/Users/mfbolus/Code/pytensorflow-spatial-transform/stn.py",
+		"/Users/mfbolus/Code/pytensorflow-spatial-transform/warp_image.py",
+		"/Users/mfbolus/Code/pytensorflow-spatial-transform/train_warp_image.py",
+		"/Users/mfbolus/Code/pytensorflow-spatial-transform/train_warp_image_vxm.py",
+		"/Users/mfbolus/Code/Aliorum/voxelmorph/voxelmorph/tf/utils.py",
+		"/opt/local/etc/macports/sources.conf",
+		"/opt/local/var/macports/build/_Users_mfbolus_macports_python_pipenv-devel/pipenv-devel/work/pipenv-2020.8.13/Makefile",
+		"/Users/mfbolus/.ports/python/pipenv-devel/Portfile",
+		"/Users/mfbolus/.ports/pipenv-devel/Portfile",
+		"/Users/mfbolus/Downloads/Stock predictions with Transformer and Time Embeddings | Towards Data Science.html",
+		"/var/folders/dh/85_fsnz92bxczf3x9lq9f4240000gn/T/pipenvhibnea6mrequirements/pipenv-mdmpe9cj-constraints.txt",
+		"/Users/mfbolus/Code/ann-regression-test/py-train/saved/saved_model.pb",
+		"/Users/mfbolus/Code/pytensorflow-spatial-transform/generate_homography_data.py",
+		"/Users/mfbolus/.cargo/registry/src/github.com-1ecc6299db9ec823/tensorflow-0.16.1/examples/generate_regression_data.py",
+		"/Users/mfbolus/Desktop/Love you forever.txt",
+		"/Users/mfbolus/Library/Application Support/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/Users/mfbolus/Library/Application Support/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/Users/mfbolus/Code/learn-rust/src/sys.rs",
+		"/Users/mfbolus/Code/learn-rust/Cargo.toml",
+		"/Users/mfbolus/Library/Application Support/Sublime Text 3/Packages/User/LSP.sublime-settings",
+		"/Users/mfbolus/Library/Application Support/Sublime Text 3/Packages/LSP/LSP.sublime-settings"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 106.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.diagnostics":
+	{
+		"height": 154.0
+	},
+	"output.exec":
+	{
+		"height": 127.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.language servers":
+	{
+		"height": 194.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.references":
+	{
+		"height": 122.0
+	},
+	"pinned_build_system": "",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 240.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
