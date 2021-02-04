@@ -1,9 +1,0 @@
--Iinclude
--I/opt/local/include
--I/usr/local/include
--stdlib=libc++
--I/opt/local/libexec/llvm-11/bin/../include/c++/v1
--I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1
--I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/local/include
--I/opt/local/libexec/llvm-11/lib/clang/11.0.0/include
--I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include

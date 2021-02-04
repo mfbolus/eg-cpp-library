@@ -3,13 +3,22 @@
 
 #include <armadillo>
 
+/// A namespace for linear dynamical systems.
 namespace lds {
+
+/// A system object for linear dynamical systems.
 class Sys {
  public:
   Sys(size_t n_x, size_t n_y);
-  ~Sys();
+  // ~Sys() = default;
 
-  void add_to_x(const arma::vec& x);
+  auto A() const -> arma::mat { return A_; }
+  auto C() const -> arma::mat { return C_; }
+  auto x() const -> arma::vec { return x_; }
+  auto y() const -> arma::vec { return y_; }
+
+  /// adds argument to underlying state of system.
+  void add_to_x(const arma::vec& in);
 
  private:
   arma::mat A_;
@@ -18,7 +27,8 @@ class Sys {
   arma::vec y_;
 };
 
-void Change_A(arma::mat& A);
+/// modifies input mat in-place
+void ChangeMat(arma::mat& X);
 
 }  // namespace lds
 

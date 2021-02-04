@@ -8,12 +8,7 @@ Sys::Sys(size_t n_x, size_t n_y) {
   C_ = arma::zeros(n_y, n_x);
 }
 
-void Sys::add_to_x(const arma::vec &x) {
-	x_ += x;
-}
+void Sys::add_to_x(const arma::vec &in) { x_ += in; }
 
-void Change_A(arma::mat &A) {
-  A(0) = 1.0;
-}
-
+void ChangeMat(arma::mat &X) { X(0) = 1.0; }
 }  // namespace lds

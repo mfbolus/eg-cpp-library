@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"PROJ",
+				"PROJECT_BINARY_DIR\tbuiltin variable"
+			],
+			[
+				"ve",
+				"arma::vec\t  Interface"
+			],
+			[
+				"ar",
+				"argv\t  const char **"
+			],
+			[
+				"arg",
+				"argv"
+			],
+			[
+				"endl",
+				"std::endl(basic_ostream<_CharT, _Traits> &__os)\t  basic_ostream<_CharT, _Traits> &"
+			],
+			[
+				"ma",
+				"main\tmain()"
+			],
+			[
 				"clas",
 				"class\tclass-..-(class)"
 			],
@@ -237,6 +261,18 @@
 		"selected_items":
 		[
 			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"doc",
+				"LSP: Document Symbols"
+			],
+			[
+				"docblock",
+				"DocBlockr: Reparse comment block"
+			],
+			[
 				"LSP",
 				"LSP: Enable Language Server Globally"
 			],
@@ -250,10 +286,6 @@
 			],
 			[
 				"instal",
-				"Package Control: Install Package"
-			],
-			[
-				"install",
 				"Package Control: Install Package"
 			],
 			[
@@ -309,10 +341,11 @@
 	},
 	"file_history":
 	[
+		"/Users/mfbolus/Code/eg-cpplint/include/lds_sys.hpp",
+		"/opt/local/include/armadillo_bits/Col_meat.hpp",
 		"/Users/mfbolus/Code/eg-cpplint/.clang-tidy",
 		"/Users/mfbolus/Code/eg-cpplint/.clang-format",
 		"/Users/mfbolus/Code/eg-cpplint/cpp.sublime-project",
-		"/Users/mfbolus/Code/eg-cpplint/include/lds_sys.hpp",
 		"/Users/mfbolus/Code/eg-cpplint/readme.md",
 		"/Users/mfbolus/Code/eg-cpplint/src/lds_sys.cpp",
 		"/Users/mfbolus/Code/eg-cpplint/.gitignore",
