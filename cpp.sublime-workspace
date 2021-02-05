@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"ARMA",
+				"ARMA_LIB"
+			],
+			[
+				"find",
+				"find_library\tbuiltin"
+			],
+			[
+				"PROJE",
+				"PROJECT_VERSION_MAJOR\tbuiltin variable"
+			],
+			[
+				"link",
+				"link_libraries\tbuiltin"
+			],
+			[
+				"inclu",
+				"target_include_directories\tbuiltin"
+			],
+			[
+				"target_li",
+				"target_link_libraries\tbuiltin"
+			],
+			[
+				"eg",
+				"eg_cpp_h"
+			],
+			[
 				"a_",
 				"a_3\t  Mat<double>"
 			],
@@ -349,6 +377,10 @@
 	},
 	"file_history":
 	[
+		"/Users/mfbolus/Code/eg-cpplint/CMakeLists.txt",
+		"/Users/mfbolus/Code/eg-cpplint/examples/CMakeLists.txt",
+		"/Users/mfbolus/Code/eg-cpplint/src/CMakeLists.txt",
+		"/Users/mfbolus/Code/eg-cpplint/build/tmp/include/eg_cpp_h/lds_sys.hpp",
 		"/Users/mfbolus/Code/eg-cpplint/cpp.sublime-project",
 		"/Users/mfbolus/Code/eg-cpplint/include/lds_sys.hpp",
 		"/Users/mfbolus/Code/eg-cpplint/src/lds_sys.cpp",
@@ -462,7 +494,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -476,15 +508,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"LDS_SYS_HPP",
+			"MACPORTS_INCLUDES",
 			"C_2",
 			"c_2"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"EG_CPP_LDS_SYS_HPP",
+			"EG_CPP+LDS_SYS_HPP",
+			"ARMA_INCLUDES_DIR"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -550,7 +587,7 @@
 	"pinned_build_system": "",
 	"replace":
 	{
-		"height": 50.0
+		"height": 72.0
 	},
 	"save_all_on_build": true,
 	"select_file":

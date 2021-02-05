@@ -22,6 +22,10 @@ list(APPEND PROJECT_LIBS ${ARMA_LIB})
 set(ARMA_INCLUDES_DIR /opt/local/include)
 list(APPEND CMAKE_REQUIRED_INCLUDES ${ARMA_INCLUDES_DIR})
 
+# after getting these lists, take out duplicates
+list(REMOVE_DUPLICATES PROJECT_LIBS)
+list(REMOVE_DUPLICATES CMAKE_REQUIRED_INCLUDES)
+
 # With variables/includes configured, configure the template header,
 # copy the source, and add include directories to entire project.
 message(STATUS "Copying ${PROJECT_SOURCE_DIR}/include/ to ${PROJECT_BINARY_DIR}/include/")
@@ -40,6 +44,9 @@ message(STATUS "CMAKE_REQUIRED_INCLUDES   = ${CMAKE_REQUIRED_INCLUDES}"  )
 
 # add targets
 # library itself
+add_library(egcpp SHARED)
+target_link_libraries(egcpp PUBLIC ${PROJECT_LIBS})
+set_target_properties(egcpp PROPERTIES VERSION ${CMAKE_PROJECT_VERSION_MAJOR}.${CMAKE_PROJECT_VERSION_MINOR}.${CMAKE_PROJECT_VERSION_PATCH} SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR})
 add_subdirectory(src)
 
 # examples
