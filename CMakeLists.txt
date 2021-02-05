@@ -35,7 +35,7 @@ message(STATUS "Copying ${PROJECT_SOURCE_DIR}/include/ to ${PROJECT_BINARY_DIR}/
 file(COPY ${PROJECT_SOURCE_DIR}/include/eg_cpp_h/ DESTINATION ${PROJECT_BINARY_DIR}/include/eg_cpp_h/)
 
 message(STATUS "Generating ${PROJECT_BINARY_DIR}/include/eg_cpp")
-configure_file(${PROJECT_SOURCE_DIR}/include/eg_cpp ${PROJECT_BINARY_DIR}/include/eg_cpp)
+configure_file(${PROJECT_SOURCE_DIR}/include/eg_cpp.in ${PROJECT_BINARY_DIR}/include/eg_cpp)
 
 # c.f. target_include_directories()
 include_directories(${PROJECT_BINARY_DIR}/include/ ${CMAKE_REQUIRED_INCLUDES})
