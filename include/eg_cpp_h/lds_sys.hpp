@@ -1,7 +1,11 @@
-#ifndef LDS_SYS_HPP
-#define LDS_SYS_HPP
+#ifndef EG_CPP_LDS_SYS_HPP
+#define EG_CPP_LDS_SYS_HPP
 
-#include <armadillo>
+// TODO(mfbolus): this is a fudge. I believe the include should never actually be called,
+// but it allows clangd to resolve these symbols.
+#ifndef EG_CPP
+#include "../eg_cpp"
+#endif
 
 /// A namespace for linear dynamical systems.
 namespace lds {

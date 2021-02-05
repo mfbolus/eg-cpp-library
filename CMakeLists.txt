@@ -11,6 +11,9 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 message(STATUS "CMAKE_CXX_STANDARD = ${CMAKE_CXX_STANDARD}")
 
+# For clangd
+set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
+
 # For each dependecy, check whether exists and get include directory and absolute path.
 set(PROJECT_LIBS)
 
@@ -32,7 +35,7 @@ message(STATUS "Copying ${PROJECT_SOURCE_DIR}/include/ to ${PROJECT_BINARY_DIR}/
 file(COPY ${PROJECT_SOURCE_DIR}/include/eg_cpp_h/ DESTINATION ${PROJECT_BINARY_DIR}/include/eg_cpp_h/)
 
 message(STATUS "Generating ${PROJECT_BINARY_DIR}/include/eg_cpp")
-configure_file(${PROJECT_SOURCE_DIR}/include/eg_cpp.in ${PROJECT_BINARY_DIR}/include/eg_cpp)
+configure_file(${PROJECT_SOURCE_DIR}/include/eg_cpp ${PROJECT_BINARY_DIR}/include/eg_cpp)
 
 # c.f. target_include_directories()
 include_directories(${PROJECT_BINARY_DIR}/include/ ${CMAKE_REQUIRED_INCLUDES})
@@ -77,3 +80,6 @@ add_subdirectory(examples)
 # # Export the package for use from the build-tree
 # # (this registers the build-tree with a global CMake-registry)
 # export(PACKAGE egcpp)
+
+# For clangd
+# file(COPY ${PROJECT_BINARY_DIR}/compile_commands.json DESTINATION ${PROJECT_SOURCE_DIR})
