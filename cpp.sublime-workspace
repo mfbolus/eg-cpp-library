@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"a_",
+				"a_3\t  Mat<double>"
+			],
+			[
+				"A",
+				"A(const arma::mat &A)\t  void"
+			],
+			[
 				"PROJ",
 				"PROJECT_BINARY_DIR\tbuiltin variable"
 			],
@@ -341,13 +349,14 @@
 	},
 	"file_history":
 	[
+		"/Users/mfbolus/Code/eg-cpplint/cpp.sublime-project",
 		"/Users/mfbolus/Code/eg-cpplint/include/lds_sys.hpp",
+		"/Users/mfbolus/Code/eg-cpplint/src/lds_sys.cpp",
+		"/Users/mfbolus/Code/eg-cpplint/src/main.cpp",
 		"/opt/local/include/armadillo_bits/Col_meat.hpp",
 		"/Users/mfbolus/Code/eg-cpplint/.clang-tidy",
 		"/Users/mfbolus/Code/eg-cpplint/.clang-format",
-		"/Users/mfbolus/Code/eg-cpplint/cpp.sublime-project",
 		"/Users/mfbolus/Code/eg-cpplint/readme.md",
-		"/Users/mfbolus/Code/eg-cpplint/src/lds_sys.cpp",
 		"/Users/mfbolus/Code/eg-cpplint/.gitignore",
 		"/Users/mfbolus/Code/eg-cpplint/test-cpplint.sublime-project",
 		"/Users/mfbolus/Code/test-cpplint/.clang-tidy",
@@ -453,7 +462,7 @@
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -467,6 +476,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"C_2",
+			"c_2"
 		],
 		"highlight": true,
 		"in_selection": false,
