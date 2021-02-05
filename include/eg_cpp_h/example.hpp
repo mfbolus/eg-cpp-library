@@ -1,5 +1,5 @@
-#ifndef EG_CPP_LDS_SYS_HPP
-#define EG_CPP_LDS_SYS_HPP
+#ifndef EG_CPP_EXAMPLE_HPP
+#define EG_CPP_EXAMPLE_HPP
 
 // TODO(mfbolus): this is a fudge. I believe the include should never actually
 // be called, but it allows clangd to resolve these symbols.
@@ -7,10 +7,10 @@
 #include <eg_cpp>
 #endif
 
-/// A namespace for linear dynamical systems.
-namespace lds {
+/// An example namespace
+namespace example {
 
-/// A system object for linear dynamical systems.
+/// An example class "Sys"
 class Sys {
  public:
   Sys(size_t n_x, size_t n_y);
@@ -29,7 +29,7 @@ class Sys {
   auto x() const -> arma::vec const& { return x_; }
   auto y() const -> arma::vec const& { return y_; }
 
-  /// adds argument to underlying state of system.
+  /// adds argument to object field `x`.
   void add_to_x(const arma::vec& in);
 
  private:
@@ -42,6 +42,6 @@ class Sys {
 /// modifies input mat in-place
 void ChangeMat(arma::mat& X);
 
-}  // namespace lds
+}  // namespace example
 
 #endif

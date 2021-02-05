@@ -8,8 +8,9 @@
 
 // All libraries.
 #include <armadillo>
+#include <iostream>
 
 // this project's includes.
-#include "eg_cpp_h/lds_sys.hpp"
+#include "eg_cpp_h/example.hpp"
 
 #endif

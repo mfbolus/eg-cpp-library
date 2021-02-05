@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.19)
+cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 
-# set project name
-project(eg-cpp VERSION 0.1.0 LANGUAGES CXX)
+# set project name and version (MAJOR.minor.patch)
+project(egcpp VERSION 0.1.0 LANGUAGES CXX)
 include(CheckIncludeFileCXX)
 include(CheckLibraryExists)
 
@@ -47,9 +47,9 @@ message(STATUS "CMAKE_REQUIRED_INCLUDES   = ${CMAKE_REQUIRED_INCLUDES}"  )
 
 # add targets
 # library itself
-add_library(egcpp SHARED)
-target_link_libraries(egcpp PUBLIC ${PROJECT_LIBS})
-set_target_properties(egcpp PROPERTIES VERSION ${CMAKE_PROJECT_VERSION_MAJOR}.${CMAKE_PROJECT_VERSION_MINOR}.${CMAKE_PROJECT_VERSION_PATCH} SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR})
+add_library(${CMAKE_PROJECT_NAME} SHARED)
+target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC ${PROJECT_LIBS})
+set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES VERSION ${CMAKE_PROJECT_VERSION_MAJOR}.${CMAKE_PROJECT_VERSION_MINOR}.${CMAKE_PROJECT_VERSION_PATCH} SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR})
 add_subdirectory(src)
 
 # examples

@@ -1,7 +1,6 @@
 #include <eg_cpp>
-#include <iostream>
 
-namespace lds {
+namespace example {
 Sys::Sys(size_t n_x, size_t n_y) {
   x_ = arma::zeros(n_x);
   y_ = arma::zeros(n_y);
@@ -21,4 +20,4 @@ void Sys::A(const arma::mat &A) {
 void Sys::add_to_x(const arma::vec &in) { x_ += in; }
 
 void ChangeMat(arma::mat &X) { X(0) = 1.0; }
-}  // namespace lds
+}  // namespace example

@@ -1,6 +1,7 @@
 target/
 build/
 .cache/
+*.sublime-workspace
 
 # C++
 ######################

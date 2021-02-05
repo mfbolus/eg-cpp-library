@@ -10,7 +10,7 @@ auto main(int argc, char const *argv[]) -> int {
 
   const size_t n_x = 2;
   size_t n_y = 4;
-  lds::Sys sys(n_x, n_y);
+  example::Sys sys(n_x, n_y);
   auto a_0 = sys.A();
   auto x_0 = sys.x();
   auto c_0 = sys.C();
@@ -21,7 +21,7 @@ auto main(int argc, char const *argv[]) -> int {
   std::cout << "C: \n" << c_0 << std::endl;
 
   // muck about with the data and reprint
-  lds::ChangeMat(a_0);
+  example::ChangeMat(a_0);
   auto a_1 = sys.A();
 
   x_0 += arma::vec(n_x).ones();
