@@ -98,8 +98,8 @@ file(COPY ${PROJECT_SOURCE_DIR}/include/eg_cpp_h/ DESTINATION ${PROJECT_BINARY_D
 message(STATUS "Generating ${PROJECT_BINARY_DIR}/include/eg_cpp")
 configure_file(${PROJECT_SOURCE_DIR}/include/eg_cpp.in ${PROJECT_BINARY_DIR}/include/eg_cpp)
 
-# # cf target_include_directories()
-# include_directories(${PROJECT_BINARY_DIR}/include/ ${CMAKE_REQUIRED_INCLUDES})
+# cf target_include_directories()
+include_directories(${PROJECT_BINARY_DIR}/include/ ${CMAKE_REQUIRED_INCLUDES})
 
 # Set optimization level
 # (have to check if a compiler that supports)
