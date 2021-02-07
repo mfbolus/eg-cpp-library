@@ -7,6 +7,9 @@ project(egcpp VERSION 0.1.0 LANGUAGES CXX C)
 set(CMAKE_PROJECT_NAME_CAP EGCPP)#all caps
 set(CMAKE_PROJECT_NAME_CAMEL EgCpp)#CamelCase
 
+# TODO(mfbolus): Update on per-project basis
+set(PROJECT_URL https://github.com/USER/REPOSITORY)
+
 # Specify C++ standard
 # n.b. this has to be before adding targets
 set(CMAKE_CXX_STANDARD 11)
@@ -68,7 +71,8 @@ endif()
 # add project cmake modules to module path
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules/")
 
-# pkg-config may be be used later.
+# pkg-config may be be used later
+# this allows `find_package` function to use pkg-config files rather than just cmake
 find_package(PkgConfig)
 
 # ARMADILLO
@@ -91,12 +95,11 @@ message(STATUS "")
 # TODO(mfbolus): update this section
 message(STATUS "Copying ${PROJECT_SOURCE_DIR}/include/ to ${PROJECT_BINARY_DIR}/include/")
 file(COPY ${PROJECT_SOURCE_DIR}/include/eg_cpp_h/ DESTINATION ${PROJECT_BINARY_DIR}/include/eg_cpp_h/)
-
 message(STATUS "Generating ${PROJECT_BINARY_DIR}/include/eg_cpp")
 configure_file(${PROJECT_SOURCE_DIR}/include/eg_cpp.in ${PROJECT_BINARY_DIR}/include/eg_cpp)
 
-# cf target_include_directories()
-include_directories(${PROJECT_BINARY_DIR}/include/ ${CMAKE_REQUIRED_INCLUDES})
+# # cf target_include_directories()
+# include_directories(${PROJECT_BINARY_DIR}/include/ ${CMAKE_REQUIRED_INCLUDES})
 
 # Set optimization level
 # (have to check if a compiler that supports)
@@ -170,14 +173,15 @@ PATTERN "*~" EXCLUDE
 PATTERN "*orig" EXCLUDE
 )
 
-install(TARGETS ${CMAKE_PROJECT_NAME}
+install(
+  TARGETS ${CMAKE_PROJECT_NAME}
   EXPORT ${CMAKE_PROJECT_NAME_CAMEL}#-> file <export-name>.cmake by default
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  )
 
-# Export the package for use from the build-tree
-# (this registers the build-tree with a global CMake-registry)
+# Export the package for use from outside the build-tree
 export(PACKAGE ${CMAKE_PROJECT_NAME})
 
 # get `configure_package_config_file`, `write_basic_package_version_file` functions:
@@ -185,7 +189,8 @@ include(CMakePackageConfigHelpers)
 
 # Create {Project}Config.cmake file
 message(STATUS "Generating '${PROJECT_BINARY_DIR}/${CMAKE_PROJECT_NAME_CAMEL}Config.cmake'")
-configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake/InstallFiles/Config.cmake.in
+configure_package_config_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/cmake/InstallFiles/Config.cmake.in
   "${CMAKE_CURRENT_BINARY_DIR}/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}Config.cmake"
   INSTALL_DESTINATION "${CMAKE_INSTALL_DATADIR}/${CMAKE_PROJECT_NAME_CAMEL}/CMake"
   )
@@ -210,18 +215,9 @@ install(FILES
   DESTINATION "${CMAKE_INSTALL_DATADIR}/${CMAKE_PROJECT_NAME_CAMEL}/CMake")
    # COMPONENT dev)
 
-# # pkgconfig related
-# message(STATUS "Copying ${PROJECT_SOURCE_DIR}/misc/ to ${PROJECT_BINARY_DIR}/misc/")
-# file(COPY ${PROJECT_SOURCE_DIR}/misc/ DESTINATION ${PROJECT_BINARY_DIR}/misc/)
+# pkgconfig related
+message(STATUS "Generating '${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc'")
+configure_file(${PROJECT_SOURCE_DIR}/misc/config.pc.in "${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc" @ONLY)
+install(FILES "${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc" DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
 
-# message(STATUS "Generating '${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc'")
-# configure_file(${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc.in "${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc" @ONLY)
-
-# install(FILES "${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc" DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
-
-# # smoke test
-# if(BUILD_SMOKE_TEST)
-#   message(STATUS "*** configuring smoke_test")
-#   enable_testing()
-#   add_subdirectory(tests1)
-# endif()
+# TODO(mfbolus): TESTING! see cmake/Help/guide/tutorial/Complete/CMakesLists.txt
