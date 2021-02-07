@@ -126,6 +126,25 @@ target_include_directories(${CMAKE_PROJECT_NAME} INTERFACE $<BUILD_INTERFACE:${P
 set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES VERSION ${CMAKE_PROJECT_VERSION_MAJOR}.${CMAKE_PROJECT_VERSION_MINOR}.${CMAKE_PROJECT_VERSION_PATCH} SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR})
 add_subdirectory(src) #add source files...
 
+# n.b.: For header-only library consider using INTERFACE mode.
+# A primary use-case for INTERFACE libraries is header-only libraries.
+# ```
+# add_library(Eigen INTERFACE
+#   src/eigen.h
+#   src/vector.h
+#   src/matrix.h
+#   )
+# target_include_directories(Eigen INTERFACE
+#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
+#   $<INSTALL_INTERFACE:include/Eigen>
+# )
+# add_executable(exe1 exe1.cpp)
+# target_link_libraries(exe1 Eigen)
+# ```
+
+
+
+
 # examples
 if(BUILD_EXAMPLES)
   add_subdirectory(examples)
@@ -166,11 +185,11 @@ set(PROJECT_CMAKE_DIR    "${PROJECT_BINARY_DIR}")
 
 message(STATUS "Generating '${PROJECT_BINARY_DIR}/${CMAKE_PROJECT_NAME_CAMEL}Config.cmake'")
 # copy/change config and configVersion file (modify only the @xyz@ variables)
-configure_file(${PROJECT_SOURCE_DIR}/cmake/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}Config.cmake.in
+configure_file(${PROJECT_SOURCE_DIR}/cmake/InstallFiles/Config.cmake.in
   "${PROJECT_BINARY_DIR}/${CMAKE_PROJECT_NAME_CAMEL}Config.cmake" @ONLY)
 
 message(STATUS "Generating '${PROJECT_BINARY_DIR}/${CMAKE_PROJECT_NAME_CAMEL}ConfigVersion.cmake'")
-configure_file(${PROJECT_SOURCE_DIR}/cmake/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}ConfigVersion.cmake.in
+configure_file(${PROJECT_SOURCE_DIR}/cmake/InstallFiles/ConfigVersion.cmake.in
   "${PROJECT_BINARY_DIR}/${CMAKE_PROJECT_NAME_CAMEL}ConfigVersion.cmake" @ONLY)
 
 # Install the export set for use with the install-tree
@@ -187,11 +206,11 @@ set(PROJECT_CMAKE_DIR    "${CMAKE_INSTALL_FULL_DATADIR}/${CMAKE_PROJECT_NAME_CAM
 
 # copy/change config and configVersion file (modify only the @xyz@ variables)
 message(STATUS "Generating '${PROJECT_BINARY_DIR}/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}Config.cmake'")
-configure_file(${PROJECT_SOURCE_DIR}/cmake/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}Config.cmake.in
+configure_file(${PROJECT_SOURCE_DIR}/cmake/InstallFiles/Config.cmake.in
   "${PROJECT_BINARY_DIR}/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}Config.cmake" @ONLY)
 
 message(STATUS "Generating '${PROJECT_BINARY_DIR}/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}ConfigVersion.cmake'")
-configure_file(${PROJECT_SOURCE_DIR}/cmake/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}ConfigVersion.cmake.in
+configure_file(${PROJECT_SOURCE_DIR}/cmake/InstallFiles/ConfigVersion.cmake.in
   "${PROJECT_BINARY_DIR}/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}ConfigVersion.cmake" @ONLY)
 
 # Install files to be found by cmake users with find_package()
