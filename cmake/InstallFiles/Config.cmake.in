@@ -1,15 +1,3 @@
-# - Config file for the egCpp package
-# It defines the following variables
-#  PROJECT_INCLUDE_DIR - include directories for project
-#  PROJECT_LIBRARY_DIR - library directories for project (normally not used!)
-#  PROJECT_LIBRARIES    - libraries to link against
+@PACKAGE_INIT@
 
-# Tell the user project where to find our headers and libraries
-set(@CMAKE_PROJECT_NAME_CAP@_INCLUDE_DIRS "@PROJECT_INCLUDE_DIR@")
-set(@CMAKE_PROJECT_NAME_CAP@_LIBRARY_DIR "@PROJECT_LIBRARY_DIR@")
-
-# Our library dependencies (contains definitions for IMPORTED targets)
-include("@PROJECT_CMAKE_DIR@/@CMAKE_PROJECT_NAME_CAMEL@LibraryDepends.cmake")
-
-# These are IMPORTED targets created by ${CMAKE_PROJECT_NAME_CAMEL}LibraryDepends.cmake
-set(@CMAKE_PROJECT_NAME_CAP@_LIBRARIES @CMAKE_PROJECT_NAME@)
+include("${CMAKE_CURRENT_LIST_DIR}/@CMAKE_PROJECT_NAME_CAMEL@.cmake")

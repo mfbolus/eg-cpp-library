@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 
 # set project name and version (MAJOR.minor.patch)
+# for project name, use lowercase. this will be the name of build library (libegcpp.so)
 project(egcpp VERSION 0.1.0 LANGUAGES CXX C)
+# some name variants I will be using:
 set(CMAKE_PROJECT_NAME_CAP EGCPP)#all caps
 set(CMAKE_PROJECT_NAME_CAMEL EgCpp)#CamelCase
 
@@ -14,9 +16,6 @@ message(STATUS "CMAKE_CXX_STANDARD = ${CMAKE_CXX_STANDARD}")
 include(CheckIncludeFileCXX) # from docs: CHECK_INCLUDE_FILE_CXX(<include> <variable> [<flags>])
 include(CheckLibraryExists) # from docs: CHECK_LIBRARY_EXISTS(LIBRARY FUNCTION LOCATION VARIABLE)
 
-# For usage later with clangd
-set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
-
 # Let user know where things getting installed since they did not specify
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
   message(STATUS "*** CMAKE_INSTALL_PREFIX was initalised by cmake to the default value of ${CMAKE_INSTALL_PREFIX} ...")
@@ -27,23 +26,24 @@ include(GNUInstallDirs)
 
 ############ OPTIONS
 ####################
+# For usage later with clangd
+option(CMAKE_EXPORT_COMPILE_COMMANDS "Whether to export compile commands to json file." ON)
+
 option(DETECT_HDF5 "Detect HDF5 and include HDF5 support, if found." OFF)
-# set(DETECT_HDF5 true)
-# uncomment the above line to enable the detection of the HDF5 library;
-# you can also enable HDF5 detection directly on the command line:
+# you can enable HDF5 detection directly on the command line:
 # cmake -D DETECT_HDF5=true
 set(PROJECT_USE_HDF5 false)
 
 option(BUILD_EXAMPLES "Build the example programs." ON)
 # disable:
-# cmake -D BUILD_SMOKE_TEST=false .
+# cmake -D BUILD_EXAMPLES=false
 
 message(STATUS "CMAKE_SYSTEM_NAME          = ${CMAKE_SYSTEM_NAME}"         )
 message(STATUS "CMAKE_CXX_COMPILER_ID      = ${CMAKE_CXX_COMPILER_ID}"     )
 message(STATUS "CMAKE_CXX_COMPILER_VERSION = ${CMAKE_CXX_COMPILER_VERSION}")
 message(STATUS "CMAKE_COMPILER_IS_GNUCXX   = ${CMAKE_COMPILER_IS_GNUCXX}"  )
 message(STATUS "DETECT_HDF5                = ${DETECT_HDF5}"               )
-message(STATUS "BUILD_EXAMPLES           = ${BUILD_EXAMPLES}"          )
+message(STATUS "BUILD_EXAMPLES             = ${BUILD_EXAMPLES}"          )
 message(STATUS "")
 message(STATUS "*** Looking for external libraries")
 
@@ -52,19 +52,23 @@ message(STATUS "*** Looking for external libraries")
 # For each dependecy, check whether exists and get include directory (list CMAKE_REQUIRED_INCLUDES) and absolute path to library (list PROJECT_REQUIRED_LIBS).
 set(PROJECT_REQUIRED_LIBS)
 
-# There may be differences in how you handle this as a function of
+# There may be differences in how you handle this as a function of OS
 if(APPLE)
   message(STATUS "Detected macOS")
-  set(CMAKE_MACOSX_RPATH 1)
-elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-  message(STATUS "Detected Linux")
-  # from armadillo:
+  # set(CMAKE_MACOSX_RPATH 1)
+  set(CMAKE_INSTALL_RPATH "@executable_path/../lib")
+elseif(UNIX)
+  message(STATUS "Detected Unix")
+  set(CMAKE_INSTALL_RPATH "$ORIGIN/../lib")
+  # from armadillo re linux:
   # "necessary when linking with Intel MKL on Linux systems"
   set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-as-needed")
 endif()
 
+# add project cmake modules to module path
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules/")
 
+# pkg-config may be be used later.
 find_package(PkgConfig)
 
 # ARMADILLO
@@ -82,16 +86,16 @@ message(STATUS "*** Project will use the following libraries:")
 message(STATUS "*** PROJECT_REQUIRED_LIBS = ${PROJECT_REQUIRED_LIBS}")
 message(STATUS "")
 
-# With variables/includes configured, configure the template header,
-# copy the source, and add include directories to entire project.
-# TODO(mfbolus): update this
+# With variables/includes set, configure the template header,
+# copy the headers, and add include directories to entire project.
+# TODO(mfbolus): update this section
 message(STATUS "Copying ${PROJECT_SOURCE_DIR}/include/ to ${PROJECT_BINARY_DIR}/include/")
 file(COPY ${PROJECT_SOURCE_DIR}/include/eg_cpp_h/ DESTINATION ${PROJECT_BINARY_DIR}/include/eg_cpp_h/)
 
 message(STATUS "Generating ${PROJECT_BINARY_DIR}/include/eg_cpp")
 configure_file(${PROJECT_SOURCE_DIR}/include/eg_cpp.in ${PROJECT_BINARY_DIR}/include/eg_cpp)
 
-# c.f. target_include_directories()
+# cf target_include_directories()
 include_directories(${PROJECT_BINARY_DIR}/include/ ${CMAKE_REQUIRED_INCLUDES})
 
 # Set optimization level
@@ -116,17 +120,18 @@ message(STATUS "CMAKE_CXX_FLAGS           = ${CMAKE_CXX_FLAGS}"          )
 message(STATUS "CMAKE_SHARED_LINKER_FLAGS = ${CMAKE_SHARED_LINKER_FLAGS}")
 message(STATUS "CMAKE_REQUIRED_INCLUDES   = ${CMAKE_REQUIRED_INCLUDES}"  )
 
-# add targets
+####### Add targets
+###################
 # library itself
 add_library(${CMAKE_PROJECT_NAME} SHARED)
 target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC ${PROJECT_REQUIRED_LIBS})
 # state that anybody linking to us needs to include the current source dir
-# to find MathFunctions.h, while we don't
+# to find header, while we do not?
 target_include_directories(${CMAKE_PROJECT_NAME} INTERFACE $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include> $<INSTALL_INTERFACE:include>)
 set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES VERSION ${CMAKE_PROJECT_VERSION_MAJOR}.${CMAKE_PROJECT_VERSION_MINOR}.${CMAKE_PROJECT_VERSION_PATCH} SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR})
 add_subdirectory(src) #add source files...
 
-# n.b.: For header-only library consider using INTERFACE mode.
+# n.b.: For header-only library consider using INTERFACE mode. From docs:
 # A primary use-case for INTERFACE libraries is header-only libraries.
 # ```
 # add_library(Eigen INTERFACE
@@ -142,10 +147,7 @@ add_subdirectory(src) #add source files...
 # target_link_libraries(exe1 Eigen)
 # ```
 
-
-
-
-# examples
+# build examples?
 if(BUILD_EXAMPLES)
   add_subdirectory(examples)
 endif()
@@ -168,7 +170,8 @@ PATTERN "*~" EXCLUDE
 PATTERN "*orig" EXCLUDE
 )
 
-install(TARGETS ${CMAKE_PROJECT_NAME} EXPORT ${CMAKE_PROJECT_NAME_CAMEL}LibraryDepends
+install(TARGETS ${CMAKE_PROJECT_NAME}
+  EXPORT ${CMAKE_PROJECT_NAME_CAMEL}#-> file <export-name>.cmake by default
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
@@ -177,57 +180,44 @@ install(TARGETS ${CMAKE_PROJECT_NAME} EXPORT ${CMAKE_PROJECT_NAME_CAMEL}LibraryD
 # (this registers the build-tree with a global CMake-registry)
 export(PACKAGE ${CMAKE_PROJECT_NAME})
 
-## LOCAL FILES
-# Create {Project}Config.cmake file for the use from the build tree
-set(PROJECT_INCLUDE_DIR "${PROJECT_BINARY_DIR}/include")
-set(PROJECT_LIB_DIR      "${PROJECT_BINARY_DIR}")
-set(PROJECT_CMAKE_DIR    "${PROJECT_BINARY_DIR}")
+# get `configure_package_config_file`, `write_basic_package_version_file` functions:
+include(CMakePackageConfigHelpers)
 
+# Create {Project}Config.cmake file
 message(STATUS "Generating '${PROJECT_BINARY_DIR}/${CMAKE_PROJECT_NAME_CAMEL}Config.cmake'")
-# copy/change config and configVersion file (modify only the @xyz@ variables)
-configure_file(${PROJECT_SOURCE_DIR}/cmake/InstallFiles/Config.cmake.in
-  "${PROJECT_BINARY_DIR}/${CMAKE_PROJECT_NAME_CAMEL}Config.cmake" @ONLY)
+configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake/InstallFiles/Config.cmake.in
+  "${CMAKE_CURRENT_BINARY_DIR}/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}Config.cmake"
+  INSTALL_DESTINATION "${CMAKE_INSTALL_DATADIR}/${CMAKE_PROJECT_NAME_CAMEL}/CMake"
+  )
 
+# generate the version file for the config file
 message(STATUS "Generating '${PROJECT_BINARY_DIR}/${CMAKE_PROJECT_NAME_CAMEL}ConfigVersion.cmake'")
-configure_file(${PROJECT_SOURCE_DIR}/cmake/InstallFiles/ConfigVersion.cmake.in
-  "${PROJECT_BINARY_DIR}/${CMAKE_PROJECT_NAME_CAMEL}ConfigVersion.cmake" @ONLY)
+write_basic_package_version_file(
+  "${CMAKE_CURRENT_BINARY_DIR}/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}ConfigVersion.cmake"
+  VERSION "${CMAKE_PROJECT_VERSION_MAJOR}.${CMAKE_PROJECT_VERSION_MINOR}.${CMAKE_PROJECT_VERSION_PATCH}"
+  COMPATIBILITY AnyNewerVersion
+)
 
 # Install the export set for use with the install-tree
-install(EXPORT ${CMAKE_PROJECT_NAME_CAMEL}LibraryDepends DESTINATION
-  "${CMAKE_INSTALL_DATADIR}/${CMAKE_PROJECT_NAME_CAMEL}/CMake"
-  COMPONENT dev)
-
-## GLOBAL INSTALL FILES
-# Create ${CMAKE_PROJECT_NAME_CAMEL}Config.cmake file for the use from the install tree
-# and install it
-set(PROJECT_INCLUDE_DIR "${CMAKE_INSTALL_FULL_INCLUDEDIR}")
-set(PROJECT_LIB_DIR      "${CMAKE_INSTALL_FULL_LIBDIR}")
-set(PROJECT_CMAKE_DIR    "${CMAKE_INSTALL_FULL_DATADIR}/${CMAKE_PROJECT_NAME_CAMEL}/CMake")
-
-# copy/change config and configVersion file (modify only the @xyz@ variables)
-message(STATUS "Generating '${PROJECT_BINARY_DIR}/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}Config.cmake'")
-configure_file(${PROJECT_SOURCE_DIR}/cmake/InstallFiles/Config.cmake.in
-  "${PROJECT_BINARY_DIR}/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}Config.cmake" @ONLY)
-
-message(STATUS "Generating '${PROJECT_BINARY_DIR}/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}ConfigVersion.cmake'")
-configure_file(${PROJECT_SOURCE_DIR}/cmake/InstallFiles/ConfigVersion.cmake.in
-  "${PROJECT_BINARY_DIR}/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}ConfigVersion.cmake" @ONLY)
+install(EXPORT ${CMAKE_PROJECT_NAME_CAMEL}
+  DESTINATION "${CMAKE_INSTALL_DATADIR}/${CMAKE_PROJECT_NAME_CAMEL}/CMake")
+  # COMPONENT dev)
 
 # Install files to be found by cmake users with find_package()
 install(FILES
   "${PROJECT_BINARY_DIR}/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}Config.cmake"
   "${PROJECT_BINARY_DIR}/InstallFiles/${CMAKE_PROJECT_NAME_CAMEL}ConfigVersion.cmake"
-  DESTINATION "${PROJECT_CMAKE_DIR}" COMPONENT dev)
+  DESTINATION "${CMAKE_INSTALL_DATADIR}/${CMAKE_PROJECT_NAME_CAMEL}/CMake")
+   # COMPONENT dev)
 
-# pkgconfig related
-message(STATUS "Copying ${PROJECT_SOURCE_DIR}/misc/ to ${PROJECT_BINARY_DIR}/misc/")
-file(COPY ${PROJECT_SOURCE_DIR}/misc/ DESTINATION ${PROJECT_BINARY_DIR}/misc/)
+# # pkgconfig related
+# message(STATUS "Copying ${PROJECT_SOURCE_DIR}/misc/ to ${PROJECT_BINARY_DIR}/misc/")
+# file(COPY ${PROJECT_SOURCE_DIR}/misc/ DESTINATION ${PROJECT_BINARY_DIR}/misc/)
 
-message(STATUS "Generating '${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc'")
-configure_file(${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc.in "${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc" @ONLY)
+# message(STATUS "Generating '${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc'")
+# configure_file(${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc.in "${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc" @ONLY)
 
-install(FILES "${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc" DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
-
+# install(FILES "${PROJECT_BINARY_DIR}/misc/${CMAKE_PROJECT_NAME}.pc" DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
 
 # # smoke test
 # if(BUILD_SMOKE_TEST)
