@@ -1,1 +1,1 @@
-example.cpp;some_other_sourcefile.cpp;
+example_sourcefile.cpp;some_other_sourcefile.cpp;
