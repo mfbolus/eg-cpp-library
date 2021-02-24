@@ -1,51 +1,54 @@
-#include <eg_cpp>
-#include <iostream>
-#include <ostream>
+#include <egcpp>
 
-auto main(int argc, char const *argv[]) -> int {
-  std::cout << "nargs = " << argc << std::endl;
-  if (argv) {
-    std::cout << "argv = " << argv << std::endl;
-  }
+auto main() -> int {
+  std::cout << "\n\nTesting example library by fitting a model by linear "
+               "regression.\n";
 
+  size_t n_t(100000);  // number of time steps
   const size_t n_x = 2;
-  size_t n_y = 4;
-  example::Sys sys(n_x, n_y);
-  auto a_0 = sys.A();
-  auto x_0 = sys.x();
-  auto c_0 = sys.C();
+  const size_t n_y = 1;
 
-  std::cout << "Original values for A, x, C : \n";
-  std::cout << "A: \n" << a_0 << std::endl;
-  std::cout << "x: \n" << x_0 << std::endl;
-  std::cout << "C: \n" << c_0 << std::endl;
+  arma::mat c_true(n_y, n_x, arma::fill::zeros);
+  c_true(0) = 0.25;
+  c_true(1) = 1 - c_true(0);
 
-  // muck about with the data and reprint
-  example::ChangeMat(a_0);
-  auto a_1 = sys.A();
+  arma::vec d_true(n_y, arma::fill::zeros);
+  d_true(0) = 0.5;
 
-  x_0 += arma::vec(n_x).ones();
-  sys.add_to_x(x_0);
-  x_0 = sys.x();
+  arma::mat r_true(n_y, n_y, arma::fill::eye);
+  r_true *= 1e-1;
 
-  std::cout << "A (modified): \n" << a_0 << std::endl;
-  std::cout << "x (modified): \n" << x_0 << std::endl;
+  example::LinearRegressionModel model_true(c_true, d_true, r_true);
 
-  sys.A(a_0);
-  a_1 = sys.A();
-  // std::cout << "A_1: \n" << a_1 << std::endl;
+  // generate the data.
+  arma::vec x0(n_x, arma::fill::zeros);    // initial condition
+  arma::mat q(n_x, n_x, arma::fill::eye);  // process noise for random walk
+  q *= 1e-1;
+  arma::mat x = example::random_walk(n_t, q, x0);  // random input data
+  auto z = model_true.simulate(x, true);
 
-  std::cout << "This shows simple handling of size mismatch in set method.\n";
-  auto a_2 = arma::mat(1, 1).zeros();
-  sys.A(a_2);
+  // fit data
+  std::cout << "\nFitting model to " << n_t << " samples of input data ...\n";
+  auto start = std::chrono::high_resolution_clock::now();
+  example::LinearRegressionModel model_est(x, z);
+  auto finish = std::chrono::high_resolution_clock::now();
+  std::chrono::duration<double, std::milli> fit_time_ms = finish - start;
+  std::cout << "Finished in " << fit_time_ms.count() << " ms.\n";
 
-  std::cout << "This shows danger of *not* checking size in set method.\n";
-  auto c_1 = arma::mat(1, 2).zeros();
-  sys.C(c_1);
-  auto c_2 = sys.C();
-  std::cout << "C_0 \n" << c_0 << "\n";
-  std::cout << "C_1 \n" << c_1 << "\n";
-  std::cout << "C_2: \n" << c_2 << "\n";
+  // simulate the newly fit model
+  auto y_hat = model_est.simulate(x);
+  auto e = z - y_hat;
+  arma::vec p_ve = arma::vec(n_y).ones() - arma::var(e, 0, 1) / arma::var(z, 0, 1);
 
+  std::cout << "\nC_true = \n" << c_true << "\n";
+  std::cout << "C_est = \n" << model_est.C() << "\n";
+
+  std::cout << "d_true = \n" << d_true << "\n";
+  std::cout << "d_est = \n" << model_est.d() << "\n";
+
+  std::cout << "R_true = \n" << r_true << "\n";
+  std::cout << "R_est = \n" << model_est.R() << "\n";
+
+  std::cout << "prop. variance explained: \n" << p_ve << "\n";
   return 0;
 }
