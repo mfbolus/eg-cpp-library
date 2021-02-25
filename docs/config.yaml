@@ -1,0 +1,7 @@
+baseURL: https://mfbolus.github.io/eg-cpp-library
+languageCode: en-us
+title: Example C++ Library
+theme: book
+pygmentsCodeFences: true
+params:
+  BookMenuBundle: /menu
