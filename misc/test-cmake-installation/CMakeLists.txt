@@ -32,8 +32,8 @@ message(STATUS "*** Looking for external libraries")
 
 ############ FIND LIBRARIES
 ###########################
-# Find out package.Should return ldsCtrlEst.
-find_package(ldsCtrlEst REQUIRED)
+# Find our package.
+find_package(egcpp REQUIRED)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${LDSCTRLEST_CXX_FLAGS}")
 

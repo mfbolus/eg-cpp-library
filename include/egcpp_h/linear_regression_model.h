@@ -77,7 +77,7 @@ class LinearRegressionModel {
   auto d() const -> const arma::vec& { return d_; }
 
   /// get measurement noise covariance (R)
-  auto R() const -> const arma::vec& { return R_; }
+  auto R() const -> const arma::mat& { return R_; }
 
   /**
    * @brief      simulates linear regression model
