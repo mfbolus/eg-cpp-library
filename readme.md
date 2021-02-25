@@ -1,5 +1,5 @@
 # eg-cpp-library
-An example repository for C++ library development using [`clangd`](https://clangd.llvm.org/) to lint/format code, and [`cmake`](https://cmake.org) to configure the build.
+An example repository for C++ library development using [`clangd`](https://clangd.llvm.org/) to lint/format code, and [`cmake`](https://cmake.org) to configure the build. Doxygen is used to build [documentation](https://mfbolus.github.io/eg-cpp-library/) for this library.
 
 ## Example `cmake` development
 Probably the best way to develop a C++ project and configure the build is to use `cmake`. It is widely-used, cross-platform, and flexible. The heart of this approach to configuring a build is to develop `CMakeLists.txt` file(s). This project includes a commented, generic example for how to write a C++ library and configure using `cmake`. Armadillo, OpenBLAS, and HDF5 are used in this project to show how to deal with external dependencies. Please see `CMakeLists.txt`, `src/CMakeLists.txt`, and `examples/CMakeLists.txt`.
