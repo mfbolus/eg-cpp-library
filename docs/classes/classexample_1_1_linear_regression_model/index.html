@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.80.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Linear Regression Model.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="example::LinearRegressionModel" />
+<meta property="og:description" content="Linear Regression Model." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mfbolus.github.io/eg-cpp-library/classes/classexample_1_1_linear_regression_model/" />
+
+<title>example::LinearRegressionModel | Example C&#43;&#43; Library</title>
+<link rel="manifest" href="/eg-cpp-library/manifest.json">
+<link rel="icon" href="/eg-cpp-library/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/eg-cpp-library/book.min.6c7c6446dfdee7c8c933e9bbc6e80ee3ed6c913b2a59519f2092c3c6a9d63e55.css" integrity="sha256-bHxkRt/e58jJM&#43;m7xugO4&#43;1skTsqWVGfIJLDxqnWPlU=">
+<script defer src="/eg-cpp-library/en.search.min.6f75dd5cb9209b9043d87f754f288cf1a64eb205d13d0ab39c9b80d42c5bf792.js" integrity="sha256-b3XdXLkgm5BD2H91TyiM8aZOsgXRPQqznJuA1Cxb95I="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/eg-cpp-library"><span>Example C&#43;&#43; Library</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/eg-cpp-library/classes/">Classes</a></li>
+<li><a href="/eg-cpp-library/namespaces/">Namespaces</a></li>
+<li><a href="/eg-cpp-library/modules/">Modules</a></li>
+<li><a href="/eg-cpp-library/files/">Files</a></li>
+<li><a href="/eg-cpp-library/pages/">Pages</a></li>
+<li><a href="/eg-cpp-library/examples/">Examples</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/eg-cpp-library/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>example::LinearRegressionModel</strong>
+
+  <label for="toc-control">
+    
+    <img src="/eg-cpp-library/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#public-functions">Public Functions</a></li>
+    <li><a href="#public-attributes">Public Attributes</a></li>
+    <li><a href="#public-functions-documentation">Public Functions Documentation</a>
+      <ul>
+        <li><a href="#function-linearregressionmodel">function LinearRegressionModel</a></li>
+        <li><a href="#function-linearregressionmodel-1">function LinearRegressionModel</a></li>
+        <li><a href="#function-c">function C</a></li>
+        <li><a href="#function-d">function d</a></li>
+        <li><a href="#function-r">function R</a></li>
+        <li><a href="#function-simulate">function simulate</a></li>
+      </ul>
+    </li>
+    <li><a href="#public-attributes-documentation">Public Attributes Documentation</a>
+      <ul>
+        <li><a href="#variable-n_x">variable n_x</a></li>
+        <li><a href="#variable-n_y">variable n_y</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="examplelinearregressionmodel">
+  example::LinearRegressionModel
+  <a class="anchor" href="#examplelinearregressionmodel">#</a>
+</h1>
+<p>Linear Regression Model.
+<code>#include &lt;linear_regression_model.h&gt;</code></p>
+<h2 id="public-functions">
+  Public Functions
+  <a class="anchor" href="#public-functions">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong><a href="/eg-cpp-library/classes/classexample_1_1_linear_regression_model/#function-linearregressionmodel">LinearRegressionModel</a></strong>(const arma::mat &amp; x, const arma::mat &amp; z)<!-- raw HTML omitted -->Constructs and fits a new <a href="/eg-cpp-library/classes/classexample_1_1_linear_regression_model/">LinearRegressionModel</a>.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/eg-cpp-library/classes/classexample_1_1_linear_regression_model/#function-linearregressionmodel">LinearRegressionModel</a></strong>(const arma::mat &amp; C, const arma::vec &amp; d, const arma::mat &amp; R)<!-- raw HTML omitted -->Constructs a new <a href="/eg-cpp-library/classes/classexample_1_1_linear_regression_model/">LinearRegressionModel</a>.</td>
+</tr>
+<tr>
+<td>auto</td>
+<td><strong><a href="/eg-cpp-library/classes/classexample_1_1_linear_regression_model/#function-c">C</a></strong>() const<!-- raw HTML omitted -->get output matrix (C)</td>
+</tr>
+<tr>
+<td>auto</td>
+<td><strong><a href="/eg-cpp-library/classes/classexample_1_1_linear_regression_model/#function-d">d</a></strong>() const<!-- raw HTML omitted -->get output bias (d)</td>
+</tr>
+<tr>
+<td>auto</td>
+<td><strong><a href="/eg-cpp-library/classes/classexample_1_1_linear_regression_model/#function-r">R</a></strong>() const<!-- raw HTML omitted -->get measurement noise covariance (R)</td>
+</tr>
+<tr>
+<td>auto</td>
+<td><strong><a href="/eg-cpp-library/classes/classexample_1_1_linear_regression_model/#function-simulate">simulate</a></strong>(const arma::mat &amp; x, bool add_noise =false)<!-- raw HTML omitted -->simulates linear regression model</td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-attributes">
+  Public Attributes
+  <a class="anchor" href="#public-attributes">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>const size_t</td>
+<td><strong><a href="/eg-cpp-library/classes/classexample_1_1_linear_regression_model/#variable-n_x">n_x</a></strong> <!-- raw HTML omitted -->number of input channels</td>
+</tr>
+<tr>
+<td>const size_t</td>
+<td><strong><a href="/eg-cpp-library/classes/classexample_1_1_linear_regression_model/#variable-n_y">n_y</a></strong> <!-- raw HTML omitted -->number of output channels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-documentation">
+  Public Functions Documentation
+  <a class="anchor" href="#public-functions-documentation">#</a>
+</h2>
+<h3 id="function-linearregressionmodel">
+  function LinearRegressionModel
+  <a class="anchor" href="#function-linearregressionmodel">#</a>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">LinearRegressionModel(
+    <span style="color:#66d9ef">const</span> arma<span style="color:#f92672">::</span>mat <span style="color:#f92672">&amp;</span> x,
+    <span style="color:#66d9ef">const</span> arma<span style="color:#f92672">::</span>mat <span style="color:#f92672">&amp;</span> z
+)
+</code></pre></div><p>Constructs and fits a new <a href="/eg-cpp-library/classes/classexample_1_1_linear_regression_model/">LinearRegressionModel</a>.</p>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><strong>x</strong> Input data [n_x x n_t]</li>
+<li><strong>z</strong> Measured output data [n_y x n_t]</li>
+</ul>
+<p>Given input/output data, constructs and fits a new Linear Regression Model:</p>
+<p>y = C*x + d</p>
+<p>z ~ N(y, R)</p>
+<h3 id="function-linearregressionmodel-1">
+  function LinearRegressionModel
+  <a class="anchor" href="#function-linearregressionmodel-1">#</a>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">LinearRegressionModel(
+    <span style="color:#66d9ef">const</span> arma<span style="color:#f92672">::</span>mat <span style="color:#f92672">&amp;</span> C,
+    <span style="color:#66d9ef">const</span> arma<span style="color:#f92672">::</span>vec <span style="color:#f92672">&amp;</span> d,
+    <span style="color:#66d9ef">const</span> arma<span style="color:#f92672">::</span>mat <span style="color:#f92672">&amp;</span> R
+)
+</code></pre></div><p>Constructs a new <a href="/eg-cpp-library/classes/classexample_1_1_linear_regression_model/">LinearRegressionModel</a>.</p>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><strong>C</strong> output matrix</li>
+<li><strong>d</strong> output bias</li>
+<li><strong>R</strong> measurement noise covariance</li>
+</ul>
+<p>Constructs a new Linear Regression Model from parameters:</p>
+<p>y = C*x + d</p>
+<p>z ~ N(y, R)</p>
+<h3 id="function-c">
+  function C
+  <a class="anchor" href="#function-c">#</a>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">auto</span> C() <span style="color:#66d9ef">const</span>
+</code></pre></div><p>get output matrix (C)</p>
+<h3 id="function-d">
+  function d
+  <a class="anchor" href="#function-d">#</a>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">auto</span> d() <span style="color:#66d9ef">const</span>
+</code></pre></div><p>get output bias (d)</p>
+<h3 id="function-r">
+  function R
+  <a class="anchor" href="#function-r">#</a>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">auto</span> R() <span style="color:#66d9ef">const</span>
+</code></pre></div><p>get measurement noise covariance (R)</p>
+<h3 id="function-simulate">
+  function simulate
+  <a class="anchor" href="#function-simulate">#</a>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">auto</span> simulate(
+    <span style="color:#66d9ef">const</span> arma<span style="color:#f92672">::</span>mat <span style="color:#f92672">&amp;</span> x,
+    <span style="color:#66d9ef">bool</span> add_noise <span style="color:#f92672">=</span>false
+)
+</code></pre></div><p>simulates linear regression model</p>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><strong>x</strong> input data</li>
+<li><strong>add_noise</strong> whether to add measurement noise</li>
+</ul>
+<p><strong>Return</strong>: model output</p>
+<h2 id="public-attributes-documentation">
+  Public Attributes Documentation
+  <a class="anchor" href="#public-attributes-documentation">#</a>
+</h2>
+<h3 id="variable-n_x">
+  variable n_x
+  <a class="anchor" href="#variable-n_x">#</a>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">const</span> size_t n_x;
+</code></pre></div><p>number of input channels</p>
+<h3 id="variable-n_y">
+  variable n_y
+  <a class="anchor" href="#variable-n_y">#</a>
+</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">const</span> size_t n_y;
+</code></pre></div><p>number of output channels</p>
+<hr>
+<p>Updated on 25 February 2021 at 13:11:34 CST</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#public-functions">Public Functions</a></li>
+    <li><a href="#public-attributes">Public Attributes</a></li>
+    <li><a href="#public-functions-documentation">Public Functions Documentation</a>
+      <ul>
+        <li><a href="#function-linearregressionmodel">function LinearRegressionModel</a></li>
+        <li><a href="#function-linearregressionmodel-1">function LinearRegressionModel</a></li>
+        <li><a href="#function-c">function C</a></li>
+        <li><a href="#function-d">function d</a></li>
+        <li><a href="#function-r">function R</a></li>
+        <li><a href="#function-simulate">function simulate</a></li>
+      </ul>
+    </li>
+    <li><a href="#public-attributes-documentation">Public Attributes Documentation</a>
+      <ul>
+        <li><a href="#variable-n_x">variable n_x</a></li>
+        <li><a href="#variable-n_y">variable n_y</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

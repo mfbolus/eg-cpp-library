@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Classes on Example C&#43;&#43; Library</title>
+    <link>https://mfbolus.github.io/eg-cpp-library/classes/</link>
+    <description>Recent content in Classes on Example C&#43;&#43; Library</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://mfbolus.github.io/eg-cpp-library/classes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>example::LinearRegressionModel</title>
+      <link>https://mfbolus.github.io/eg-cpp-library/classes/classexample_1_1_linear_regression_model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.io/eg-cpp-library/classes/classexample_1_1_linear_regression_model/</guid>
+      <description>Linear Regression Model.</description>
+    </item>
+    
+  </channel>
+</rss>
