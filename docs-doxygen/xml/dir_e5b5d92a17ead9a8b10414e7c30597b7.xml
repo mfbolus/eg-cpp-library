@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_e5b5d92a17ead9a8b10414e7c30597b7" kind="dir">
+    <compoundname>egcpp_h</compoundname>
+    <innerfile refid="linear__regression__model_8h">linear_regression_model.h</innerfile>
+    <innerfile refid="random__walk_8h">random_walk.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="build/include/egcpp_h/"/>
+  </compounddef>
+</doxygen>

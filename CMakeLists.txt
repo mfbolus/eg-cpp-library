@@ -108,6 +108,9 @@ include(Armadillo)
 # HDF5
 include(HDF5)
 
+find_package(Doxygen REQUIRED dot
+             OPTIONAL_COMPONENTS mscgen dia)
+
 # save the CXX flags configured for later use by dependency.
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PROJECT_REQUIRED_CXX_FLAGS}")
 
@@ -202,6 +205,21 @@ if(${CMAKE_PROJECT_NAME_CAP}_BUILD_EXAMPLES)
       PATTERN "*.txt" EXCLUDE
       )
   add_subdirectory(examples)
+endif()
+
+# build documentation
+if(DOXYGEN_FOUND)
+  set(DOXYGEN_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/docs-doxygen)
+  set(DOXYGEN_FULL_PATH_NAMES NO)
+  set(DOXYGEN_GENERATE_XML YES)
+  set(DOXYGEN_XML_OUTPUT "xml")
+  # set(DOXYGEN_XML_PROGRAMLISTING YES)
+
+  doxygen_add_docs(doxygen
+      ${PROJECT_BINARY_DIR}/include/ ${PROJECT_SOURCE_DIR}/src/
+      ALL)
+elseif()
+  message("Doxygen not found. Will not generate docs ... ")
 endif()
 
 ################################################################################
