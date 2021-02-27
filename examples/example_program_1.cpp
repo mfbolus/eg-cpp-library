@@ -42,7 +42,7 @@ auto main() -> int {
   arma::mat r_true(n_y, n_y, arma::fill::eye);
   r_true *= 1e-1;
 
-  example::LinearRegressionModel model_true(c_true, d_true, r_true);
+  example::LinearModel model_true(c_true, d_true, r_true);
 
   // generate the data.
   arma::vec x0(n_x, arma::fill::zeros);    // initial condition
@@ -54,7 +54,7 @@ auto main() -> int {
   // fit data
   std::cout << "\nFitting model to " << n_t << " samples of input data ...\n";
   auto start = std::chrono::high_resolution_clock::now();
-  example::LinearRegressionModel model_est(x, z);
+  example::LinearModel model_est(x, z);
   auto finish = std::chrono::high_resolution_clock::now();
   std::chrono::duration<double, std::milli> fit_time_ms = finish - start;
   std::cout << "Finished in " << fit_time_ms.count() << " ms.\n";

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Classes on Example C&#43;&#43; Library</title>
+    <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/classes/</link>
+    <description>Recent content in Classes on Example C&#43;&#43; Library</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://mfbolus.github.edu/eg-cpp-library/docs/api/classes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>example::LinearModel</title>
+      <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/classes/classexample_1_1_linear_model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.edu/eg-cpp-library/docs/api/classes/classexample_1_1_linear_model/</guid>
+      <description>Linear Regression Model.</description>
+    </item>
+    
+    <item>
+      <title>example::LinearRegressionModel</title>
+      <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/classes/classexample_1_1_linear_regression_model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.edu/eg-cpp-library/docs/api/classes/classexample_1_1_linear_regression_model/</guid>
+      <description>Linear Regression Model.</description>
+    </item>
+    
+    <item>
+      <title>example::PoissonModel</title>
+      <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/classes/classexample_1_1_poisson_model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.edu/eg-cpp-library/docs/api/classes/classexample_1_1_poisson_model/</guid>
+      <description>Poisson Model.</description>
+    </item>
+    
+  </channel>
+</rss>

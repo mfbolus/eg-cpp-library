@@ -3,83 +3,111 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/menu/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/files/dir_4fef79e7177ba769987a8da36c892c5f/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/categories/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/model/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/classes/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/dir_4fef79e7177ba769987a8da36c892c5f/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/files/dir_e5b5d92a17ead9a8b10414e7c30597b7/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/categories/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/files/linear__regression__model_8h/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/classes/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/files/random__walk_8h/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/dir_e5b5d92a17ead9a8b10414e7c30597b7/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/namespaces/namespaceexample/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/linear__model_8h/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/linear__regression__model_8h/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/classes/classexample_1_1_linear_regression_model/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/poisson__model_8h/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/examples/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/random__walk_8h/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/files/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/namespaces/namespaceexample/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/files/dir_8f2980731aba7ec7b9fcae5764f196e3/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/classes/classexample_1_1_linear_model/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/modules/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/classes/classexample_1_1_linear_regression_model/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/namespaces/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/classes/classexample_1_1_poisson_model/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/pages/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/examples/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/files/dir_68267d1309a1af8e8297ef4c3efbcdba/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/files/linear__regression__model_8cpp/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/dir_8f2980731aba7ec7b9fcae5764f196e3/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/files/random__walk_8cpp/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/</loc>
   </url>
   
   <url>
-    <loc>https://mfbolus.github.io/eg-cpp-library/tags/</loc>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/modules/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/namespaces/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/pages/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/dir_68267d1309a1af8e8297ef4c3efbcdba/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/linear__model_8cpp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/poisson__model_8cpp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/random__walk_8cpp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mfbolus.github.edu/eg-cpp-library/tags/</loc>
   </url>
   
 </urlset>
