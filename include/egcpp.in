@@ -36,7 +36,8 @@
 #include <cassert>
 
 // this project's headers.
-#include "egcpp_h/linear_regression_model.h"
+#include "egcpp_h/linear_model.h"
+#include "egcpp_h/poisson_model.h"
 #include "egcpp_h/random_walk.h"
 
 #endif

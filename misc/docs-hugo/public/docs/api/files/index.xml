@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Files on Example C&#43;&#43; Library</title>
+    <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/</link>
+    <description>Recent content in Files on Example C&#43;&#43; Library</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://mfbolus.github.edu/eg-cpp-library/docs/api/files/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>build</title>
+      <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/dir_4fef79e7177ba769987a8da36c892c5f/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/dir_4fef79e7177ba769987a8da36c892c5f/</guid>
+      <description>build #  Directories #     Name     include     Updated on 4 March 2021 at 09:51:17 CST</description>
+    </item>
+    
+    <item>
+      <title>egcpp_h</title>
+      <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/dir_e5b5d92a17ead9a8b10414e7c30597b7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/dir_e5b5d92a17ead9a8b10414e7c30597b7/</guid>
+      <description>egcpp_h #  Files #     Name     egcpp_h/linear_model.h declares and partially defines an example linear model class type   egcpp_h/poisson_model.h declares and partially defines an example Poisson class type   egcpp_h/random_walk.h declares a random walk simulation     Updated on 4 March 2021 at 09:51:17 CST</description>
+    </item>
+    
+    <item>
+      <title>egcpp_h/linear_model.h</title>
+      <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/linear__model_8h/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/linear__model_8h/</guid>
+      <description>declares and partially defines an example linear model class type</description>
+    </item>
+    
+    <item>
+      <title>egcpp_h/linear_regression_model.h</title>
+      <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/linear__regression__model_8h/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/linear__regression__model_8h/</guid>
+      <description>declares and partially defines an example class type</description>
+    </item>
+    
+    <item>
+      <title>egcpp_h/poisson_model.h</title>
+      <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/poisson__model_8h/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/poisson__model_8h/</guid>
+      <description>declares and partially defines an example Poisson class type</description>
+    </item>
+    
+    <item>
+      <title>egcpp_h/random_walk.h</title>
+      <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/random__walk_8h/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/random__walk_8h/</guid>
+      <description>declares a random walk simulation</description>
+    </item>
+    
+    <item>
+      <title>include</title>
+      <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/dir_8f2980731aba7ec7b9fcae5764f196e3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/dir_8f2980731aba7ec7b9fcae5764f196e3/</guid>
+      <description>include #  Directories #     Name     egcpp_h     Updated on 4 March 2021 at 09:51:17 CST</description>
+    </item>
+    
+    <item>
+      <title>src</title>
+      <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/dir_68267d1309a1af8e8297ef4c3efbcdba/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/dir_68267d1309a1af8e8297ef4c3efbcdba/</guid>
+      <description>src #  Files #     Name     src/linear_model.cpp defines an example linear model class type   src/poisson_model.cpp defines an example Poisson model class type   src/random_walk.cpp defines a random walk simulation     Updated on 4 March 2021 at 09:51:17 CST</description>
+    </item>
+    
+    <item>
+      <title>src/linear_model.cpp</title>
+      <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/linear__model_8cpp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/linear__model_8cpp/</guid>
+      <description>defines an example linear model class type</description>
+    </item>
+    
+    <item>
+      <title>src/poisson_model.cpp</title>
+      <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/poisson__model_8cpp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/poisson__model_8cpp/</guid>
+      <description>defines an example Poisson model class type</description>
+    </item>
+    
+    <item>
+      <title>src/random_walk.cpp</title>
+      <link>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/random__walk_8cpp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mfbolus.github.edu/eg-cpp-library/docs/api/files/random__walk_8cpp/</guid>
+      <description>defines a random walk simulation</description>
+    </item>
+    
+  </channel>
+</rss>

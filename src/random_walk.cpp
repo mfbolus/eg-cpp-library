@@ -29,7 +29,10 @@ namespace example {
 
 auto random_walk(size_t n_t, const arma::mat& Q, arma::vec x0) -> arma::mat {
   size_t n_x = Q.n_rows;
-  assert(n_x==Q.n_cols);
+
+  if ((n_x != Q.n_cols) || (Q.n_cols != Q.n_rows)) {
+    throw std::logic_error("Q must be `n_x` x `n_x`.");
+  }
 
   arma::mat x(n_x, n_t, arma::fill::zeros);
   x.col(0) = x0;

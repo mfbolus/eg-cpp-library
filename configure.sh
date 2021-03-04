@@ -1,9 +1,7 @@
 #!/bin/sh
 
 # Generate sourcelist
-cd scripts
-./generate-lib-sourcelist.sh
-cd ..
+cd scripts && ./generate-lib-sourcelist.sh && cd ..
 
 # remove cache for next cmake run
 mkdir -p build

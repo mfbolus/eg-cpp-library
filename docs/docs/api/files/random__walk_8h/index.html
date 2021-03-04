@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.80.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="declares a random walk simulation">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="egcpp_h/random_walk.h" />
+<meta property="og:description" content="declares a random walk simulation" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mfbolus.github.edu/eg-cpp-library/docs/api/files/random__walk_8h/" />
+
+<title>egcpp_h/random_walk.h | Example C&#43;&#43; Library</title>
+<link rel="manifest" href="/eg-cpp-library/manifest.json">
+<link rel="icon" href="/eg-cpp-library/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/eg-cpp-library/book.min.a15c3a88ea3d20b6a66c1170df2a33ad73521cb0a6747c1149ccc19189fac34f.css" integrity="sha256-oVw6iOo9ILambBFw3yozrXNSHLCmdHwRSczBkYn6w08=">
+<script defer src="/eg-cpp-library/en.search.min.e3fedb1c13f3f2cc30b8f2c8ab61ffcebc985befe098cc33a6e907287ba73f81.js" integrity="sha256-4/7bHBPz8swwuPLIq2H/zryYW&#43;/gmMwzpukHKHunP4E="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/eg-cpp-library"><span>Example C&#43;&#43; Library</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><strong>API Reference</strong>
+<ul>
+<li><a href="/eg-cpp-library/docs/api/namespaces/">Namespaces</a></li>
+<li><a href="/eg-cpp-library/docs/api/classes/">Classes</a></li>
+<li><a href="/eg-cpp-library/docs/api/modules/">Modules</a></li>
+<li><a href="/eg-cpp-library/docs/api/files/">Files</a></li>
+</ul>
+</li>
+</ul>
+<p><br /></p>
+<ul>
+<li><a href="/eg-cpp-library/docs/model/"><strong>Model Definition</strong></a></li>
+</ul>
+<p><br /></p>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/mfbolus/eg-cpp-library" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/eg-cpp-library/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>egcpp_h/random_walk.h</strong>
+
+  <label for="toc-control">
+    
+    <img src="/eg-cpp-library/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#egcpp_hrandom_walkh">egcpp_h/random_walk.h</a>
+      <ul>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#detailed-description">Detailed Description</a></li>
+        <li><a href="#source-code">Source code</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="egcpp_hrandom_walkh">
+  egcpp_h/random_walk.h
+  <a class="anchor" href="#egcpp_hrandom_walkh">#</a>
+</h1>
+<p>declares a random walk simulation  <a href="#detailed-description">More&hellip;</a></p>
+<h2 id="namespaces">
+  Namespaces
+  <a class="anchor" href="#namespaces">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="/eg-cpp-library/docs/api/namespaces/namespaceexample/">example</a></strong> <br>An example namespace.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="detailed-description">
+  Detailed Description
+  <a class="anchor" href="#detailed-description">#</a>
+</h2>
+<p>This file declares a random walk simulation.</p>
+<h2 id="source-code">
+  Source code
+  <a class="anchor" href="#source-code">#</a>
+</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//===-- egcpp_h/random_walk.h - Random Walk ---------------------*- C++ -*-===//
+</span><span style="color:#75715e">//
+</span><span style="color:#75715e">// Copyright 2021 Michael Bolus
+</span><span style="color:#75715e">//
+</span><span style="color:#75715e">// Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+</span><span style="color:#75715e">// you may not use this file except in compliance with the License.
+</span><span style="color:#75715e">// You may obtain a copy of the License at
+</span><span style="color:#75715e">//
+</span><span style="color:#75715e">//     http://www.apache.org/licenses/LICENSE-2.0
+</span><span style="color:#75715e">//
+</span><span style="color:#75715e">// Unless required by applicable law or agreed to in writing, software
+</span><span style="color:#75715e">// distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+</span><span style="color:#75715e">// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+</span><span style="color:#75715e">// See the License for the specific language governing permissions and
+</span><span style="color:#75715e">// limitations under the License.
+</span><span style="color:#75715e">//
+</span><span style="color:#75715e">//===----------------------------------------------------------------------===//
+</span><span style="color:#75715e">//===----------------------------------------------------------------------===//
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#ifndef EGCPP_RANDOM_WALK_H
+</span><span style="color:#75715e">#define EGCPP_RANDOM_WALK_H
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// TODO(mfbolus): this is a fudge. I believe the include should never actually
+</span><span style="color:#75715e">// be called, but it allows clangd to resolve these symbols.
+</span><span style="color:#75715e"></span><span style="color:#75715e">#ifndef EGCPP
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;egcpp&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#endif
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">namespace</span> example {
+
+<span style="color:#66d9ef">auto</span> <span style="color:#a6e22e">random_walk</span>(size_t n_t, <span style="color:#66d9ef">const</span> arma<span style="color:#f92672">::</span>mat<span style="color:#f92672">&amp;</span> Q, arma<span style="color:#f92672">::</span>vec x0) <span style="color:#f92672">-&gt;</span> arma<span style="color:#f92672">::</span>mat;
+
+}  <span style="color:#75715e">// namespace example
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#endif
+</span></code></pre></div><hr>
+<p>Updated on  4 March 2021 at 09:51:17 CST</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#egcpp_hrandom_walkh">egcpp_h/random_walk.h</a>
+      <ul>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#detailed-description">Detailed Description</a></li>
+        <li><a href="#source-code">Source code</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
