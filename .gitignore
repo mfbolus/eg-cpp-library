@@ -2,6 +2,16 @@ target/
 build/
 .cache/
 *.sublime-workspace
+!docs/
+!misc/docs-hugo/
+
+# binary files
+*.png
+*.tiff
+*.pdf
+*.jpg
+*.h5
+*.mat
 
 # C++
 ######################
