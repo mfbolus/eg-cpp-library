@@ -85,4 +85,4 @@ auto PoissonModel::simulate(const arma::mat& x, bool add_noise) -> arma::mat {
 
 -------------------------------
 
-Updated on  4 March 2021 at 09:51:17 CST
+Updated on  4 March 2021 at 09:55:16 CST
