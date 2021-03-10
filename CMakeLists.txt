@@ -8,6 +8,8 @@ set(CMAKE_PROJECT_NAME_CAP EGCPP)#all caps
 # TODO(mfbolus): Update
 set(PROJECT_URL https://github.com/mfbolus/eg-cpp-library)
 
+set(CMAKE_PROJECT_DESCRIPTION "Example")
+
 # WINDOWS WARNING
 if (WIN32)
   message(WARNING "Build/Use of this library on Windows is untested and
@@ -97,8 +99,8 @@ find_package(PkgConfig REQUIRED)
 if(${CMAKE_PROJECT_NAME_CAP}_BUILD_STATIC)
   #statically-linking against openblas in this case
 
-  # OpenBLAS
-  include(OpenBLAS)
+# OpenBLAS
+include(OpenBLAS)
 
 endif()
 
@@ -108,7 +110,7 @@ include(Armadillo)
 # HDF5
 include(HDF5)
 
-find_package(Doxygen REQUIRED dot
+find_package(Doxygen COMPONENTS dot
              OPTIONAL_COMPONENTS mscgen dia)
 
 # save the CXX flags configured for later use by dependency.

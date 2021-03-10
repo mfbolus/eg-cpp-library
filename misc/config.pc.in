@@ -1,7 +1,7 @@
 # Generated during cmake configuration of @CMAKE_PROJECT_NAME@.
 
 Name: @CMAKE_PROJECT_NAME@
-Description: Example
+Description: @CMAKE_PROJECT_DESCRIPTION@
 URL: @PROJECT_URL@
 Version: @LIBVERSION@
 Cflags: @PROJECT_REQUIRED_CXX_FLAGS@ @PROJECT_PKGCONFIG_INCLUDE_DIRS@

@@ -26,8 +26,7 @@
 
 namespace example {
 
-LinearModel::LinearModel(const arma::mat& x,
-                                             const arma::mat& z)
+LinearModel::LinearModel(const arma::mat& x, const arma::mat& z)
     : n_x(x.n_rows),
       n_y(z.n_rows),
       C_(arma::mat(n_y, n_x, arma::fill::zeros)),
@@ -51,9 +50,9 @@ LinearModel::LinearModel(const arma::mat& x,
     // sum_E_x1_x1.submat(0, 0, n_x - 1, n_x - 1) += P.slice(t);
   }
 
-  arma::mat Cd = sum_zx * arma::inv_sympd(sum_x1_x1);
-  C_ = Cd.submat(0, 0, n_y - 1, n_x - 1);
-  d_ = vectorise(Cd.submat(0, n_x, n_y - 1, n_x));
+  arma::mat cd = sum_zx * arma::inv_sympd(sum_x1_x1);
+  C_ = cd.submat(0, 0, n_y - 1, n_x - 1);
+  d_ = vectorise(cd.submat(0, n_x, n_y - 1, n_x));
 
   // Ghahgramani, Hinton 1996:
   arma::mat sum_zz(n_y, n_y, arma::fill::zeros);
@@ -65,9 +64,8 @@ LinearModel::LinearModel(const arma::mat& x,
   R_ = (sum_zz - sum_yz) / n_t;
 }
 
-LinearModel::LinearModel(const arma::mat& C,
-                                             const arma::vec& d,
-                                             const arma::mat& R)
+LinearModel::LinearModel(const arma::mat& C, const arma::vec& d,
+                         const arma::mat& R)
     : n_x(C.n_cols),
       n_y(C.n_rows),
       C_(arma::mat(n_y, n_x, arma::fill::zeros)),
@@ -78,8 +76,7 @@ LinearModel::LinearModel(const arma::mat& C,
   R_ = R;
 }
 
-auto LinearModel::simulate(const arma::mat& x, bool add_noise)
-    -> arma::mat {
+auto LinearModel::simulate(const arma::mat& x, bool add_noise) -> arma::mat {
   size_t n_t(x.n_cols);  // number of time samples
   arma::mat y_hat(n_y, n_t);
 

@@ -13,6 +13,9 @@ Checks: >
   llvm-include-order,
   clang-analyzer-cplusplus.InnerPointer,
   cppcoreguidelines-*,
+  -modernize-use-trailing-return-type,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -readability-magic-numbers,
 # -google-runtime-references,
 # Add this last one to *remove* this check.
 # It prevents passing arguments as non-const reference for editing w/o return.
